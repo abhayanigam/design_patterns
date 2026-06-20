@@ -33,4 +33,17 @@ public class Facade {
         You don't have to call the restaurant to check if they have ingredients, talk to the chef
         to see if the oven is hot, or manage the GPS tracking and routing for the delivery driver.
         The app acts as a Facade—it hides all the chaotic, multistep backend operations behind a single, simple click.
+
+    Question 3: "We are building the backend for a 'One-Click Buy' button on an e-commerce site. 
+    Clicking it needs to: verify inventory, charge the credit card, update the loyalty points 
+    system, and send a shipping request. The frontend developers shouldn't have to orchestrate 
+    4 different backend microservices. How do you design this integration?"
+
+    The Approach: You hear "complex multi-step process," "multiple subsystems," and "hide 
+    complexity from the client (frontend)."
+
+    The Answer: Facade Pattern. You create a single OrderFacade class with one simple method: 
+    placeOrder(cart, user). Inside that method, the Facade does all the heavy lifting—talking to 
+    the InventoryService, PaymentGateway, and ShippingService in the correct order. 
+    The frontend only talks to the Facade, completely unaware of the messy subsystems behind it.
  */

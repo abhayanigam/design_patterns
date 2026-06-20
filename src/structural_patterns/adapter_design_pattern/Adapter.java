@@ -24,4 +24,18 @@ public class Adapter {
     Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
 
     When to use: Integrating third-party libraries or legacy code into a modern codebase without rewriting them.
+
+
+    Question 1: "Our modern mobile application uses JSON to communicate. 
+    However, we just acquired a company whose legacy billing system only accepts XML. 
+    We need to send our user payment data to their billing system, but we don't have the time 
+    or budget to rewrite their entire backend. How do you resolve this?"
+
+    The Approach: You hear "incompatible interfaces," "JSON vs XML," and "legacy system integration." 
+    The constraint is that you cannot modify the existing legacy code.
+
+    The Answer: Adapter Pattern. You create a wrapper class (the Adapter) that implements
+    the modern interface your mobile app expects. Inside this Adapter, you take the 
+    incoming JSON, translate it into XML, and then pass it along to the legacy billing system. 
+    It acts exactly like a travel plug adapter for a foreign power outlet.
 */

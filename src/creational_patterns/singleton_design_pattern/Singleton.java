@@ -51,4 +51,17 @@ public class Singleton {
         There is only one physical unit tied to that television.
 
     In software, a Singleton works exactly like this remote. It is a single object shared by every part of your program.
+
+
+    Question 1: "We need a configuration manager for our application. 
+    Reading the config file is expensive, and we must ensure that every 
+    part of the app uses the exact same configuration data. How would you design this?"
+
+    The Approach: You hear "exactly same data" and "expensive to create." 
+    The constraint is strictly enforcing a single instance.
+
+    The Answer: Singleton Pattern. You would explain how to make the constructor 
+    private and provide a static global point of access. 
+    (Bonus points: Mention the thread-safety issues of Singleton in multi-threaded 
+    environments and how to handle them using Double-Checked Locking).
 */

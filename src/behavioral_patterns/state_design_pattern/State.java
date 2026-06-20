@@ -42,4 +42,18 @@ public class State {
         2. State Pattern: The object switches its own behaviors automatically behind the scenes as
         its condition changes (e.g., an order moving itself to "Shipped" once a payment clears).
         The states are highly aware of each other to manage transitions.
+
+    Question 3: "We are building a document management system. A document can be 'Draft', 
+    'Under Review', or 'Published'. If a user clicks 'Publish' on a Draft, it should throw an error. 
+    If they click it on 'Under Review', it succeeds. How do you design this to avoid writing a 
+    massive switch statement for every single button click across the app?"
+
+    The Approach: You hear "behavior changes based on current status," "avoid massive switch statements," 
+    and "distinct lifecycle phases."
+
+    The Answer: State Pattern. You create a DocumentState interface with methods for each 
+    action (e.g., publish(), edit()). You then create concrete classes for each state 
+    (DraftState, ReviewState, PublishedState). The core Document object delegates the 
+    action to its current State object. The State object handles the logic and automatically 
+    transitions the Document to the next appropriate state.
  */

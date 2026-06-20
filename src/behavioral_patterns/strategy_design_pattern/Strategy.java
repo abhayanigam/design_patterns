@@ -37,4 +37,17 @@ public class Strategy {
             3. Moderator: Can edit articles to fix typos but cannot delete them.
             4. Customer / Guest: Can only view articles.
 
+    Question 3: "Design a payment processor for an e-commerce site. 
+    A user can pay via Credit Card, PayPal, or Crypto. New payment 
+    methods will be added frequently in the future. How do you design this 
+    without creating a massive switch statement?"
+
+    The Approach: You hear "multiple ways to do the same task" and 
+    "frequent future additions." You need to encapsulate algorithms 
+    and make them interchangeable.
+
+    The Answer: Strategy Pattern. Create a PaymentStrategy interface with 
+    a pay() method. Implement concrete classes (CreditCardStrategy, CryptoStrategy). 
+    The checkout context takes a strategy at runtime and executes it. 
+    This perfectly satisfies the Open/Closed Principle.
  */

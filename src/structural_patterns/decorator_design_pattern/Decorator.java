@@ -27,4 +27,15 @@ public class Decorator {
 
         Decorator is a structural design pattern that lets you attach new behaviors to objects by
         placing these objects inside special wrapper objects that contain the behaviors.
+
+    Question 4: "You have an existing third-party API client class. 
+    You want to add execution-time logging and caching to it, but you 
+    cannot modify the third-party source code. How do you do it?"
+
+        The Approach: You hear "add behavior," "can't modify source code," and "wrap existing logic."
+
+        The Answer: Decorator Pattern (or Proxy, depending on intent). 
+        You create a wrapper class that implements the same interface as the third-party client. 
+        You inject the real client into your wrapper. Your wrapper logs the start time, 
+        delegates the call to the real client, logs the end time, and returns the result.
 */

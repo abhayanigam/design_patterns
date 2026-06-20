@@ -39,4 +39,31 @@ public class Observer {
             5 minutes to check (polling). Instead, YouTube automatically sends a
             Notification to everyone who clicked the bell icon.
         4. If you get tired of the channel, you hit Unsubscribe, and you stop getting notifications.
+
+
+        Question 2: "You are building a weather app. When the weather station updates the 
+        temperature, the mobile UI, the website UI, and the logging system all need
+        to update immediately. How do you wire this up?"
+
+        The Approach: You hear "one thing changes" and "many things need to react." 
+        This is a classic one-to-many dependency.
+
+        The Answer: Observer Pattern. The weather station is the Subject (or Publisher), 
+        and the UIs/loggers are the Observers (or Subscribers). They register with the subject, 
+        and the subject pushes updates to them.
+
+        Question 2: "You are building the backend for a cryptocurrency trading platform. 
+        Whenever the price of Bitcoin changes, the Web Dashboard, the Mobile App, 
+        and an automated Trading Bot all need to be updated instantly. 
+        How do you design this so the price tracker doesn't need to know the 
+        specific details of the apps it's updating?"
+
+        The Approach: You hear "one thing changes" (price) and "many things need to react 
+        instantly" (Dashboard, App, Bot). This is a classic one-to-many relationship where 
+        you need high decoupling.
+
+        The Answer: Observer Pattern. The Bitcoin price tracker is the Subject, and the 
+        Dashboard, App, and Bot are the Observers. The Observers register themselves with 
+        the Subject. Whenever the price changes, the Subject simply loops through its list 
+        of subscribers and calls a generic update() method on each of them.
  */

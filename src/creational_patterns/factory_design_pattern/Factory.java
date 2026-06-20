@@ -50,4 +50,20 @@ public class Factory {
 
         The main application code just says, "Hey Logistics, give me a transport vehicle and deliver this package."
          It doesn't care whether it gets a Truck or a Ship; it just cares that the vehicle knows how to deliver().
+
+
+    Question 2: "Our application needs to send alerts to users. 
+    Right now, it just sends Emails. Next sprint, we need to add SMS. Later, 
+    we'll add Push Notifications. The core business logic shouldn't care about how the 
+    message is delivered; it just needs to say 'send'. How do you structure this so 
+    adding new methods is painless?"
+
+        The Approach: You hear "creation based on condition," "growing list of types," 
+        and the need to "decouple business logic from object creation."
+
+        The Answer: Factory Method Pattern. You define a common Notification interface with a 
+        send() method. Then, you create a NotificationFactory class with a method like 
+        createNotification(String type). Based on the input ("SMS", "EMAIL"), the factory 
+        instantiates and returns the correct concrete class. Your core app only interacts 
+        with the Factory and the Interface.
 */
